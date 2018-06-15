@@ -123,7 +123,7 @@ export async function uploadHandler(ctx: Koa.Context) {
     try{
         publicKey = signature.recover(imageHash).toString()
     } catch(cause){
-        throw new APIError({code: APIError.Code.RecOutOfRangeError, cause})
+        throw new APIError({code: APIError.Code.InvalidSignature, cause})
     }
     const threshold = account.posting.weight_threshold
     for (const auth of account.posting.key_auths) {
