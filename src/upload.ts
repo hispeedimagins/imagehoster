@@ -119,7 +119,7 @@ export async function uploadHandler(ctx: Koa.Context) {
     APIError.assert(account, APIError.Code.NoSuchAccount)
 
     let validSignature = false
-    let publicKey = null
+    let publicKey
     try{
         publicKey = signature.recover(imageHash).toString()
     } catch(cause){
