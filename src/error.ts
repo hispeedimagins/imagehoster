@@ -21,7 +21,7 @@ enum ErrorCode {
     PayloadTooLarge,
     QoutaExceeded,
     UpstreamError,
-    RecOutOfRangeError,
+    
 }
 
 const HttpCodes = new Map<ErrorCode, number>([
@@ -34,7 +34,7 @@ const HttpCodes = new Map<ErrorCode, number>([
     [ErrorCode.InvalidMethod, 405],
     [ErrorCode.InvalidProxyUrl, 400],
     [ErrorCode.InvalidSignature, 400],
-    [ErrorCode.RecOutOfRangeError, 400],
+    
     [ErrorCode.LengthRequired, 411],
     [ErrorCode.MissingParam, 400],
     [ErrorCode.NoSuchAccount, 404],
